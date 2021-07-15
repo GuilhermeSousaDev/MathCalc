@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="imagem/matematica.png">
+    <title>MathematicCalc</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav>
+     <div class="flex-navbar">
+         <h1>MathematicCalc</h1>
+         <h1 class="noneh1">MathCalc</h1>
+         <a href="https://github.com/GuilhermeSousaDev" rel="noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg> GitHub</a>
+     </div>
+    </nav>
+    <!--Calculation Area-->
+
+    <main>
+        <h1>Operações</h1>
+        <hr>
+            <div class="fieldCalc">
+                <div class="vm">
+                    <h2>Velocidade Média</h2>
+                    <br>
+                    <h2>Ache Δt e Δs</h2>
+                    <label for="Ti">Posição Final</label>
+                    <input type="number" id="Pf">
+                    <label for="Pi">Posição Inical</label>
+                    <input type="number" id="Pi">
+                    <label for="Tf">Tempo Final</label>
+                    <input type="number" id="Tf">
+                    <label for="Ti">Tempo Inicial</label>
+                    <input type="number" id="Ti">
+                    <p>Fórmula: Posição Final - Posição inicial = Δs</p>
+                    <p>Fórmula: Tempo Final - Tempo Inicial = Δt</p>
+                    <button onclick="seekDelta()">Calcular</button>
+                    <p class="res"></p>
+                    <br>
+                    <h2>Encontrar Velocidade Média</h2>
+                    <label for="a">Variação do espaço Δs</label>
+                    <input type="number" id="vde">
+                    <label for="b">Variação do tempo Δt</label>
+                    <input type="number" id="vdt">
+                    <p>Fórmula:VM = Δt / Δs </p>
+                    <button onclick="resolveVelocidadeMedia()">Calcular</button>
+                    <p class="res1"></p>
+                </div>
+                <hr>
+                <div class="eq2">
+                    <h2>Equação de 2 Grau</h2>  
+                    <br>                  
+                    <label for="a">Valor de A</label>
+                    <input type="number" id="a">
+                    <label for="b">Valor de B</label>
+                    <input type="number" id="b">
+                    <label for="c">Valor de C</label>
+                    <input type="number" id="c"> 
+                    <p>Fórmula: Δ = b2 – 4ac  </p> 
+                    <p>Fórmula: x1 e x2= x = – b ± √∆/2.a</p>
+                    <button onclick="resolveEquationGrau2()">Calcular</button>  
+                    <p class="res2"></p>               
+                </div>
+                <hr>
+                <div class="teoremaP">
+                    <h2>Teorema de Pitágoras</h2>
+                    <br>
+                    <label for="c1">Cateto 1</label>
+                    <input type="number" id="c1">
+                    <label for="c2">Cateto 2</label>
+                    <input type="number" id="c2">
+                    <p>Fórmula: a2= b2 + c2</p>
+                    <p>Hipotenusa = soma dos catetos ao quadrado</p>
+                    <button onclick="resolvePitagoras()">Calcular</button>
+                    <p class="res3"></p>
+                </div>
+                <hr>
+                <div class="conversionGraus">                    
+                    <h2>Graus Celsius para Fahrenheit</h2>
+                    <br>
+                    <label for="grauscelsius">Graus Celsius</label>
+                    <input type="number" id="gc">
+                    <p>Formula: ( °C × 9/5) + 32</p>
+                    <button onclick="resolveGrausC()">Calcular</button>
+                    <p class="res4"></p>
+                    <br>
+                    <h2>Graus Fahrenheit para Celsius</h2>
+                    <br>
+                    <label for="grausfahrenheit">Graus Fahrenheit</label>
+                    <input type="number" id="gf">
+                    <p>Fórmula:(5 °F − 32) × 5/9</p>
+                    <button onclick="resolveGrausF()">Calcular</button>
+                    <p class="res5"></p>
+                </div>
+                <hr>
+                <div class="ondas">
+                    <h2>Calcular Velocidade de Onda</h2>
+                    <br>
+                    <label for="comprimentodeonda">Comprimento de Onda</label>
+                    <input type="number" id="cmo">
+                    <label for="frequencia">Frequência</label>
+                    <input type="text" id="f">
+                    <p>Fórmula: V = λ x F</p>
+                    <button onclick="resolveVelocidade()">Calcular</button>
+                    <p class="res6"></p>
+                    <br>
+                    <h2>Calcular Lambda</h2>
+                    <br>
+                    <label for="velocidade">Velocidade de Onda</label>
+                    <input type="number" id="vo">
+                    <label for="frequencia">Frequência</label>
+                    <input type="number" id="f2">
+                    <p>Fórmula: λ = V / F</p>
+                    <button onclick="resolveLambda()">Calcular</button>
+                    <p class="res7"></p>
+                </div>
+        </div>
+        </main>
+        <footer>
+            <span>Conteúdo de Cunho Educativo,<br> sem Fins Lucrativos</span>
+            <p>Criado por <a href="https://www.instagram.com/guilherme_augusto56/">GuilhermeSousa</a></p>
+        </footer>
+        <script>
+            $(window).scroll(() => {
+                const top = $(window).scrollTop()
+                top > 340? $('nav').fadeOut('slow') : $('nav').fadeIn('slow')
+            })
+        </script>
+</body>
+</html>
