@@ -4,7 +4,7 @@ function seekDelta() {
     const Tf = document.getElementById('Tf').value
     const Ti = document.getElementById('Ti').value
     const res = document.querySelector('.res')
-    if(Pf == '' || Pi == '' || Tf == '' || Ti == '') {
+    if(Pf == '' && Pi == '' && Tf == '' && Ti == '') {
         res.innerHTML = 'Adicione Valores'
         return;
     }
@@ -113,5 +113,15 @@ function resolveEquationGrau2() {
         }
         const lambda = vo / f
         res.innerHTML = `Comprimento de Onda = ${lambda}`
+    }
+    function resolveFq() {
+        const co = document.getElementById('co').value
+        const vel = document.getElementById('vel').value
+        const res = document.querySelector('.res8')
+        if(co.length == 0 || vel.length == 0) { 
+            res.innerHTML = 'Adicione Valores'
+        }
+        const fq = co / vel
+        res.innerHTML = `Frequência = ${fq}`
     }
   
